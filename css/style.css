@@ -1,0 +1,789 @@
+/* Body */
+body {
+    background-color: #003366; 
+}
+
+/*** Spinner Start ***/
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+/*** Spinner End ***/
+
+/*** Button Start ***/
+.btn {
+    transition: .5s;
+}
+
+.btn-green{
+    background-color: #44dad5;
+}
+
+.btn-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-sm-square {
+    width: 34px;
+    height: 34px;
+}
+
+.btn-md-square {
+    width: 44px;
+    height: 44px;
+}
+
+.btn-lg-square {
+    width: 56px;
+    height: 56px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-md-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50%;
+}
+
+.btn.btn-primary {
+    box-shadow: inset 0 0 0 0 var(--bs-primary);
+}
+
+.btn.btn-primary:hover {
+    box-shadow: inset 300px 0 0 0 var(--bs-light) !important;
+    color: var(--bs-primary) !important;
+}
+
+.btn.btn-secondary {
+    box-shadow: inset 0 0 0 0 var(--bs-primary);
+}
+
+.btn.btn-secondary:hover {
+    box-shadow: inset 300px 0 0 0 var(--bs-primary);
+    color: var(--bs-light) !important;
+}
+
+.btn-hover {
+    transition: 0.5s;
+}
+
+.btn-hover:hover {
+    color: var(--bs-secondary) !important;
+}
+
+ /* Custom Button Style */
+ .btn-transparent-border {
+    background-color: transparent; /* Warna latar belakang transparan */
+    border: 2px solid #44dad5; /* Border dengan warna */
+    color: #fff; /* Warna teks sesuai dengan border */
+    font-weight: bold; /* Mengatur font-weight agar tidak tebal */
+}
+
+.btn-transparent-border:hover {
+    background-color: #44dad5; /* Background saat hover */
+    color: #fff; /* Warna teks saat hover */
+    font-weight: bold; /* Mengatur font-weight agar tidak tebal */
+    border-color: #44dad5; /* Border tetap */
+}
+
+/* Sub title start */
+.sub-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+}
+
+.sub-title::before,
+.sub-title::after {
+    content: "";
+    width: 10vw; /* Ubah lebar garis menggunakan viewport width */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid var(--bs-light) !important; /* warna garis */
+}
+
+.sub-title::before {
+    right: 100%;
+    margin-right: 1vw; /* Jarak garis dari teks menggunakan viewport width */
+}
+
+.sub-title::after {
+    left: 100%;
+    margin-left: 1vw; /* Jarak garis dari teks menggunakan viewport width */
+}
+
+/* Sub title end */
+
+/*** Navbar Start ***/
+.navbar-light .navbar-nav {
+    display: flex;
+    justify-content: center; /* Menengahkan elemen di dalam navbar */
+    width: 100%; /* Pastikan elemen parent memiliki lebar penuh */
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Yantramanav', sans-serif;
+    position: relative;
+    margin-right: 25px;
+    padding: 35px 0;
+    color: var(--bs-light) !important; /*warna teks navbar*/
+    font-size: 18px;
+    font-weight: 400;
+    outline: none;
+    transition: .5s;
+    background: #003366; /*bg navbar*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 20px 0;
+    color: #fff !important;
+    font-size: 18px !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #44dad5 !important; /*warna teks hover navbar */
+}
+
+.navbar-light .navbar-brand img {
+    max-height: 50px;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-brand img {
+    max-height: 45px;
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@media (min-width: 1200px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        border: 0;
+        border-radius: 10px;
+        transition: .5s;
+        opacity: 0;
+    }
+}
+
+.dropdown .dropdown-menu a:hover {
+    background: var(--bs-light);
+    color: var(--bs-white);
+}
+
+.navbar .nav-item:hover .dropdown-menu {
+    transform: rotateX(0deg);
+    visibility: visible;
+    background: var(--bs-light) !important;
+    transition: .5s;
+    opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+    .sticky-top.navbar-light {
+        position: relative;
+        background: #003366; /*bg navbar ketika responsif/ ukuran menjadi kecil*/
+    }
+
+    .navbar.navbar-expand-lg .navbar-toggler { /*bagian button/toggler/titik tiga navbar ketika responsif*/
+        padding: 10px 20px;
+        border: 1px solid #44dad5;
+        color: #44dad5;
+    }
+
+    /* .navbar-light .navbar-collapse { /* garis pembatas navbar/ garis dibawah navbar*/
+        /* margin-top: 15px;
+        border-top: 1px solid #ca1a1a;
+    } */ 
+
+    .navbar-collapse {
+        justify-content: center;
+    }
+    
+    .navbar-light .navbar-nav .nav-link,
+    .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin-left: 0;
+        color: var(--bs-light) !important; /*warna text menu navbar ketika responsif*/
+    }
+
+    .navbar-light .navbar-brand img {
+        max-height: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-light {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+        z-index: 999;
+    }
+    
+    .sticky-top.navbar-light {
+        position: fixed;
+        background: #003366 !important; /*bg warna ketika navbar di scroll*/
+    }
+    .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none;
+    }
+}
+/*** Navbar end ***/
+
+/*** Skills Start ***/
+.skills .nav-item a span.skillsfont {
+    color: #FFFFFF; /* Mengubah warna font menjadi putih */
+    font-weight: 600;
+}
+
+.skills .tab-class {
+    text-align: center !important;
+}
+
+.skills .nav-item {
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.skills .nav-item a span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills .nav-item a.active {
+    background: #44DAD5 !important;
+}
+
+.skills .nav-item a.active span {
+    color: var(--bs-light) !important;
+    font-weight: 600;
+}
+
+.circle-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px; /* Mengurangi jarak antar lingkaran */
+}
+
+.circle-logo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #FFFFFF;
+    padding: 10px; /* Jarak antara tepi lingkaran dan konten di dalamnya */
+    border: 2px solid #fff; /* Warna border lingkaran */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px; /* Ukuran lebar lingkaran */
+    height: 100px; /* Ukuran tinggi lingkaran */
+}
+
+.circle-logo img {
+    width: 60px; /* Ukuran lebar logo di dalam lingkaran */
+    height: 60px; /* Ukuran tinggi logo di dalam lingkaran */
+    object-fit: contain; /* Memastikan logo tidak terdistorsi */
+}
+
+.circle-text {
+    margin-top: 5px; /* Jarak antara lingkaran dan teks */
+    font-size: 14px; /* Ukuran font teks di bawah logo */
+    color: #fff; /* Warna teks */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .skills .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .skills .nav-item a {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .circle-wrapper {
+        margin-bottom: 20px; /* Jarak antar lingkaran yang lebih besar pada layar kecil */
+    }
+
+    .circle-logo {
+        width: 80px; /* Ukuran lebih kecil untuk layar kecil */
+        height: 80px;
+    }
+
+    .circle-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .circle-text {
+        font-size: 12px; /* Ukuran font yang lebih kecil */
+    }
+}
+
+/* Responsif untuk layar sangat kecil seperti ponsel */
+@media (max-width: 576px) {
+    .skills .nav-item {
+        margin-bottom: 5px;
+    }
+
+    .skills .nav-item a {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .circle-wrapper {
+        margin-bottom: 30px; /* Jarak antar lingkaran yang lebih besar pada layar sangat kecil */
+    }
+
+    .circle-logo {
+        width: 70px; /* Ukuran lebih kecil untuk layar sangat kecil */
+        height: 70px;
+    }
+
+    .circle-logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .circle-text {
+        font-size: 10px; /* Ukuran font yang lebih kecil */
+    }
+    
+    .bg-blue {
+        background-color: #003366;
+    }
+
+    .text-blue {
+        background-color: #003366;
+    }
+}
+/*** Skills End ***/
+
+/* Project Start */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Card Style */
+.card {
+    background-color: #fff;
+    border: 1px solid #003366;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out; /* Add transition effect */
+    overflow: hidden; /* Ensure content stays within card */
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    color: #003366;
+}
+
+.project-img {
+    width: 100%;
+    height: 50%;
+    border-radius: 4px;
+}
+
+.tech-icons {
+    margin: 10px 0;
+}
+
+.tech-icon {
+    display: inline-block;
+    background-color: #44dad5;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.description {
+    margin: 10px 0;
+    color: #333;
+    text-align: justify;
+}
+
+.read-more {
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.year {
+    margin: 10px 0;
+    color: #666;
+    text-align: center;
+}
+
+/* Popup Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Make sure it is above other elements */
+    color:#000;
+}
+
+.popup-content {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px; /* Adjust as needed */
+    max-height: 80vh; /* Limit height and make it scrollable if content overflows */
+    padding: 20px;
+    text-align: left; /* Align text to the left */
+    position: relative;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.popup-description {
+    margin-bottom: 20px;
+}
+
+.popup-description ol {
+    margin: 0;
+    padding-left: 20px; /* Indent list */
+}
+
+.popup-description ul {
+    margin: 0;
+    padding-left: 20px; /* Indent nested list */
+}
+
+
+.popup-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.close, .close-popup {
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-popup {
+    position: static;
+    margin-top: 20px;
+}
+
+/* Project End */
+
+/*Achievements*/
+.achievement-grid-hover {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.achievement-item-hover {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.achievement-img-hover {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.achievement-overlay-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+}
+
+.achievement-item-hover:hover .achievement-img-hover {
+    transform: scale(1.1);
+}
+
+.achievement-item-hover:hover .achievement-overlay-hover {
+    opacity: 1;
+}
+
+.achievement-title-hover {
+    font-size: 18;
+    color:#fff;
+}
+/*achievements end*/
+
+/* Contact Start */
+#contact {
+    background-color: #003366; /* Latar belakang biru gelap */
+    color: #fff; /* Warna teks putih untuk kontras */
+    padding: 60px 0;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff; /* Warna teks putih untuk heading */
+    text-align: center;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    color: #dcdcdc; /* Warna teks pencerahan untuk paragraf */
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Membuat lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #fff; /* Warna ikon putih */
+    font-size: 24px; /* Ukuran ikon */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Kustomisasi warna untuk masing-masing tombol */
+.btn-success {
+    background-color: #25D366; /* Warna WhatsApp */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Warna Email */
+}
+
+.btn-dark {
+    background-color: #333; /* Warna GitHub */
+}
+
+.btn-info {
+    background-color: #0077b5; /* Warna LinkedIn */
+}
+
+/* Menyesuaikan warna lingkaran dengan warna media sosial */
+.icon-circle.btn-success {
+    background-color: #25D366; /* Warna WhatsApp */
+}
+
+.icon-circle.btn-primary {
+    background-color: #007bff; /* Warna Email */
+}
+
+.icon-circle.btn-dark {
+    background-color: #333; /* Warna GitHub */
+}
+
+.icon-circle.btn-info {
+    background-color: #0077b5; /* Warna LinkedIn */
+}
+
+.icon-circle:hover {
+    transform: scale(1.1); /* Efek zoom saat hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-label {
+    font-size: 16px;
+    color: #fff; /* Warna teks putih untuk label */
+    font-weight: 600;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    #contact h2 {
+        font-size: 1.8rem;
+    }
+
+    #contact p {
+        font-size: 1rem;
+    }
+
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 20px;
+    }
+
+    .contact-label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    #contact-us h2 {
+        font-size: 1.6rem;
+    }
+
+    #contact-us p {
+        font-size: 0.9rem;
+    }
+
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
+    }
+
+    .contact-label {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    #contact-us {
+        padding: 40px 0;
+    }
+
+    #contact-us h2 {
+        font-size: 1.4rem;
+    }
+
+    #contact-us p {
+        font-size: 0.8rem;
+        margin: 0 auto 30px;
+    }
+
+    .icon-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .contact-label {
+        font-size: 10px;
+    }
+}
+
+/* Contact End */
+
+/* Footer Start */
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #00274e !important;
+}
+/* Footer End */
+
+
+/* Font type start*/
+.thinfont{
+    font-family: 'Roboto Mono';
+    text-align: justify;
+}
+
+.aboutfont{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    line-height: 1.6; /* Spasi antar baris */
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.bigfont{
+    font-weight: 600;
+}
+/* Font type end*/
+
+/* other start*/
+.pb-1 {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100px; /* Adjust height if necessary */
+}
+
+bg-dark-blue{
+    background-color: #00274e;
+}
+
+justify{
+    text-align: left;
+}
+/* other end*/
+
+
